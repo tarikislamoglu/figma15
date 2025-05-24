@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { IoLocationSharp } from "react-icons/io5";
+import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
 const DashBoard = () => {
   const [newFarm, setNewFarm] = useState(false);
@@ -29,10 +30,15 @@ const DashBoard = () => {
     {
       color: "#60A662",
       label: "Paddy",
-      percent: "0%",
+      percent: "20%",
       status: "Ready",
     },
   ];
+  const data = products.map((item) => ({
+    name: item.label,
+    value: parseFloat(item.percent.replace("%", "")),
+    color: item.color,
+  }));
 
   const getLinkClass = (path) =>
     `block py-2 text-center transition ${
@@ -142,27 +148,47 @@ const DashBoard = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-1/2 rounded-md border p-5 text-black shadow-xl">
-            <div className="space-y-10">
-              <div className="flex justify-between space-x-5">
-                <div className="flex h-36 w-36 items-center justify-center rounded-full border-4">
-                  23 Acres
+          <div className="w-full md:w-1/2 rounded-md border text-black shadow-xl">
+            <div>
+              <div className="flex space-x-5">
+                <div className="w-1/2 relative flex justify-center items-center">
+                  <PieChart width={250} height={250}>
+                    <Pie
+                      data={data}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={60}
+                      outerRadius={100}
+                      dataKey="value"
+                    >
+                      {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                  <div className="absolute top-1/2 left-1/2 font-bold -translate-x-1/2 -translate-y-1/2 text-center ">
+                    23acres
+                  </div>
                 </div>
-                <ul className="flex flex-col justify-center space-y-2">
-                  {products.map(({ color, label }) => (
-                    <li key={label} className="flex items-center space-x-3">
-                      <div
-                        className="h-5 w-5 rounded-full"
-                        style={{ backgroundColor: color }}
-                      />
-                      <span>{label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
-              <div className="border-t p-3">
-                <ul className="space-y-2">
+                <div className="flex items-center justify-center ">
+                  <ul className="flex flex-col justify-center space-y-2">
+                    {products.map(({ color, label }) => (
+                      <li key={label} className="flex items-center space-x-3">
+                        <div
+                          className="h-5 w-5 rounded-full"
+                          style={{ backgroundColor: color }}
+                        />
+                        <span>{label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <hr />
+              <div className="p-5">
+                <ul className="space-y-5 flex flex-col items-center md:items-start md-w-full">
                   {products.map(({ color, label, percent, status }) => (
                     <li key={label} className="flex items-center space-x-3">
                       <div
