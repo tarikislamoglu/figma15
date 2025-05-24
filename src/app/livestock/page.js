@@ -63,7 +63,7 @@ const Livestock = () => {
             </div>
 
             <button
-              className="bg-[#4A7A4C] text-white rounded-md p-2"
+              className="bg-[#4A7A4C] text-white rounded-md p-2 cursor-pointer"
               onClick={() => setAddCattle(true)}
             >
               + Add Cattle

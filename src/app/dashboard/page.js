@@ -60,7 +60,7 @@ const DashBoard = () => {
             <button className=" text-white rounded-md ">View Live</button>
           </div>
         </div>
-        <div className="flex flex-col items-center md:items-start">
+        <div className="flex flex-col items-start md:items-start">
           <div>
             <p>Farms:</p>
             <p>Area:</p>
@@ -148,7 +148,7 @@ const DashBoard = () => {
           </div>
         </div>
         {newFarm && (
-          <div className="absolute top-15 left-25 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
+          <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
             <button
               className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md cursor-pointer font-bold"
               onClick={() => setNewFarm(false)}
