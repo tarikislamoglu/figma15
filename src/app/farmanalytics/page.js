@@ -21,8 +21,6 @@ const FarmAnalytics = () => {
         <div className="flex flex-col items-center justify-center">
           <img
             src="/avatar.jpg"
-            width={123}
-            height={123}
             className="rounded-full border-4 border-white w-[123px] h-[123px]"
           />
           <h3 className="font-bold">Namık Korona</h3>
@@ -55,7 +53,7 @@ const FarmAnalytics = () => {
           + Add Farm
         </button>
       </div>
-      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 flex flex-col p-10 space-y-5 font-bold text-[#4A7A4C] relative">
+      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 flex flex-col md:p-10 md:space-y-5 font-bold text-[#4A7A4C] relative">
         <div className="flex md:justify-between flex-col md:flex-row items-center">
           <h2 className=" text-[35px]">Farm 1</h2>
           <button
@@ -101,7 +99,7 @@ const FarmAnalytics = () => {
           </div>
         </div>
         <div className="w-full flex md:flex-row md:p-10 md:space-x-5 space-x-0 flex-col items-center ">
-          <div className="flex flex-col md:w-1/2 w-full space-y-3">
+          <div className="flex flex-col md:w-1/2 w-full md:space-y-3">
             <div className="flex justify-between shadow-md p-2 rounded-md">
               <div className="flex flex-col ">
                 <h3>Humudity:</h3>
@@ -136,32 +134,30 @@ const FarmAnalytics = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 flex-col flex">
-            <img src="/farm.jpg" className="rounded-md max-h-[360px] w-full " />
-            <div className="flex justify-around space-x-2">
-              <div className="flex items-center justify-center space-x-2 border-2 rounded-full mt-2">
-                <img src="/crop.png" width={24} height={24} />
+          <div className="w-full md:w-1/2 flex-col flex max-h-80 overflow-hidden">
+            <img
+              src="/farm.jpg"
+              className="rounded-md  max-h-64 object-cover h-2/3"
+            />
+            <div className="flex w-full h-1/3 items-baseline">
+              <div className="flex flex-col md:flex-row items-center justify-center space-x-2 border-2 md:rounded-full md:mt-2 w-1/2 h-full md:text-sm text-lg overflow-hidden">
+                <img src="/crop.png" className="w-6 h-6" />
                 <span>Crop:</span>
                 <span className="text-black">Wheat</span>
               </div>
-              <div className="flex items-center justify-center  space-x-2 border-2 rounded-full mt-2 p-2">
-                <img
-                  src="/hector.png"
-                  width={24}
-                  height={24}
-                  className="bg-[#4A7A4C]"
-                />
+              <div className="flex flex-col md:flex-row items-center justify-center md:space-x-2 border-2 md:rounded-full md:mt-2 w-1/2 h-full md:text-sm text-lg overflow-hidden">
+                <img src="/hector.png" className="bg-[#4A7A4C] w-6 h-6 " />
                 <span>Area:</span>
                 <span className="text-black">25Acres</span>
               </div>
             </div>
           </div>
         </div>
-        <button className="border-4 border-[#4A7A4C] text-[#4A7A4C] py-2 font-bold cursor-pointer rounded-md">
+        <button className="border-4 border-[#4A7A4C] text-[#4A7A4C] py-2 font-bold cursor-pointer md:rounded-md">
           Efficancy Rating
         </button>
         {addCrop && (
-          <div className="absolute top-15 left-25 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
+          <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
             <button
               className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md cursor-pointer font-bold"
               onClick={() => setAddCrop(false)}
@@ -210,7 +206,7 @@ const FarmAnalytics = () => {
           </div>
         )}
         {newFarm && (
-          <div className="absolute top-15 left-25 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
+          <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
             <button
               className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md cursor-pointer font-bold"
               onClick={() => setNewFarm(false)}

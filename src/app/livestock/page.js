@@ -53,7 +53,7 @@ const Livestock = () => {
           + Add Farm
         </button>
       </div>
-      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 text-[#4A7A4C] space-y-5 relative p-5 font-bold">
+      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 text-[#4A7A4C] space-y-3 relative p-5 font-bold">
         <div className="flex md:justify-between md:items-baseline md:flex-row flex-col items-center">
           <h2 className="text-[35px] font-bold">Manage Livestock</h2>
           <div className="flex p-5">
@@ -71,21 +71,21 @@ const Livestock = () => {
           </div>
         </div>
 
-        <div className="flex md:justify-end justify-center">
-          <div className="bg-[#4A7A4C] p-2 rounded-md text-white">
-            <p>
+        <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:justify-end">
+          <div className="bg-[#4A7A4C] p-2 rounded-md text-white mx-2 px-5">
+            <p className="text-center">
               Total:<span className="px-5">63</span>
             </p>
           </div>
           <div className="bg-[#4A7A4C] p-2 rounded-md text-white mx-2 px-5">
-            <p>
+            <p className="text-center">
               Area:<span className="px-2">25 Acres</span>
             </p>
           </div>
         </div>
 
-        <div className="flex space-x-2 py-5 font-bold ">
-          <div className=" w-full md:w-1/3 p-2 rounded-md shadow-md space-y-3">
+        <div className="flex flex-col items-center md:flex-row md:space-x-2 md:py-5 font-bold  ">
+          <div className=" w-full lg:w-1/3 md:w-1/2 md:p-2 rounded-md shadow-md space-y-3">
             <h3>Goat:</h3>
             <ul className="pl-2">
               <li>Count:</li>
@@ -94,13 +94,13 @@ const Livestock = () => {
               <li>Females:</li>
             </ul>
             <div className="relative">
-              <img src="/goat.png" />
+              <img src="/goat.png" className="w-full" />
               <p className="absolute top-1/2 left-1/2 text-2xl text-white font-bold">
                 +5
               </p>
             </div>
           </div>
-          <div className=" w-full md:w-1/3 p-2 rounded-md shadow-md space-y-3">
+          <div className=" w-full lg:w-1/3 md:w-1/2 md:p-2 rounded-md shadow-md space-y-3">
             <h3>Cow:</h3>
             <ul className="pl-2">
               <li>Count:</li>
@@ -109,7 +109,7 @@ const Livestock = () => {
               <li>Females:</li>
             </ul>
             <div className="relative">
-              <img src="/cow.png" />
+              <img src="/cow.png" className="w-full" />
               <p className="absolute top-1/2 left-1/2 text-2xl text-white font-bold">
                 +2
               </p>
@@ -117,7 +117,7 @@ const Livestock = () => {
           </div>
         </div>
         {addCattle && (
-          <div className="absolute top-15 left-25 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
+          <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
             <button
               className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md cursor-pointer font-bold"
               onClick={() => setAddCattle(false)}
@@ -178,7 +178,7 @@ const Livestock = () => {
           </div>
         )}
         {newFarm && (
-          <div className="absolute top-15 left-25 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
+          <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl ">
             <button
               className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md cursor-pointer font-bold"
               onClick={() => setNewFarm(false)}

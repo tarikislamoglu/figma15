@@ -61,9 +61,11 @@ const DashBoard = () => {
           </div>
         </div>
         <div className="flex flex-col items-center md:items-start">
-          <p>Farms:</p>
-          <p>Area:</p>
-          <p>Expected date of Harvest:</p>
+          <div>
+            <p>Farms:</p>
+            <p>Area:</p>
+            <p>Expected date of Harvest:</p>
+          </div>
         </div>
         <div className="flex justify-around items-center">
           <h3 className="text-[#4A7A4C] w-1/2 md:w-full text-center ">
@@ -106,40 +108,42 @@ const DashBoard = () => {
                   </li>
                 </ul>
               </div>
-              <ul className="space-y-3 border-t-1 p-5">
-                <li className="flex space-x-5">
-                  <div className="w-[19px] h-[19px] rounded-full bg-[#FF9494]"></div>
-                  <p>Wheat</p>
-                  <p className="text-[#FF9494]">%40</p>
-                  <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
-                    Ready
-                  </p>
-                </li>
-                <li className="flex space-x-5">
-                  <div className="w-[19px] h-[19px] rounded-full bg-[#0066C5]"></div>
-                  <p>Corn</p>
-                  <p className="text-[#0066C5]">%10</p>
-                  <p className="text-[#FF0000] border-[#FF0000] border-2 rounded-md p-0.5 text-sm">
-                    Not Ready
-                  </p>
-                </li>
-                <li className="flex space-x-5">
-                  <div className="w-[19px] h-[19px] rounded-full bg-[#FF0000]"></div>
-                  <p>Barley</p>
-                  <p className="text-[#FF0000]">%30</p>
-                  <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
-                    Ready
-                  </p>
-                </li>
-                <li className="flex space-x-5">
-                  <div className="w-[19px] h-[19px] rounded-full bg-[#60A662]"></div>
-                  <p>Paddy</p>
-                  <p className="text-[#60A662]">%0</p>
-                  <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
-                    Ready
-                  </p>
-                </li>
-              </ul>
+              <div className="flex flex-col items-center justify-center md:items-start border-t-1 p-3">
+                <ul className=" space-y-3  md:p-5 ">
+                  <li className="flex space-x-5">
+                    <div className="w-[19px] h-[19px] rounded-full bg-[#FF9494]"></div>
+                    <p>Wheat</p>
+                    <p className="text-[#FF9494]">%40</p>
+                    <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
+                      Ready
+                    </p>
+                  </li>
+                  <li className="flex space-x-5">
+                    <div className="w-[19px] h-[19px] rounded-full bg-[#0066C5]"></div>
+                    <p>Corn</p>
+                    <p className="text-[#0066C5]">%10</p>
+                    <p className="text-[#FF0000] border-[#FF0000] border-2 rounded-md p-0.5 text-sm">
+                      Not Ready
+                    </p>
+                  </li>
+                  <li className="flex space-x-5">
+                    <div className="w-[19px] h-[19px] rounded-full bg-[#FF0000]"></div>
+                    <p>Barley</p>
+                    <p className="text-[#FF0000]">%30</p>
+                    <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
+                      Ready
+                    </p>
+                  </li>
+                  <li className="flex space-x-5">
+                    <div className="w-[19px] h-[19px] rounded-full bg-[#60A662]"></div>
+                    <p>Paddy</p>
+                    <p className="text-[#60A662]">%0</p>
+                    <p className="text-[#60A662] border-[#60A662] border-2 rounded-md p-0.5 text-sm">
+                      Ready
+                    </p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
