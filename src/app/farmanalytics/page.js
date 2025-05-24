@@ -6,6 +6,25 @@ import React, { useState } from "react";
 const FarmAnalytics = () => {
   const [addCrop, setAddCrop] = useState(false);
   const [newFarm, setNewFarm] = useState(false);
+  const elements = [
+    { label: "Nitrogen", value: "20%", status: "Good" },
+    { label: "Phosphorus", value: "8%", status: "Good" },
+    { label: "Potassium", value: "13%", status: "Good" },
+
+    { label: "Humidity", value: "15%", status: "Good" },
+    {
+      label: "Soil Hydration",
+      value: "40%",
+      status: "High",
+      color: "#A10000",
+    },
+    {
+      label: "PH Value",
+      value: "4",
+      status: "Low",
+      color: "#C5B100",
+    },
+  ];
   const pathname = usePathname();
 
   const getLinkClass = (path) =>
@@ -102,11 +121,7 @@ const FarmAnalytics = () => {
         </div>
 
         <div className="flex flex-col md:flex-row md:gap-5 justify-around">
-          {[
-            { label: "Nitrogen", value: "20%", status: "Good" },
-            { label: "Phosphorus", value: "8%", status: "Good" },
-            { label: "Potassium", value: "13%", status: "Good" },
-          ].map((item) => (
+          {elements.slice(0, 3).map((item) => (
             <div
               key={item.label}
               className="flex justify-between w-full md:w-1/3 shadow-md p-2 rounded-md"
@@ -124,21 +139,7 @@ const FarmAnalytics = () => {
 
         <div className="flex flex-col md:flex-row md:gap-5">
           <div className="flex flex-col w-full md:w-1/2 md:gap-3">
-            {[
-              { label: "Humidity", value: "15%", status: "Good" },
-              {
-                label: "Soil Hydration",
-                value: "40%",
-                status: "High",
-                color: "#A10000",
-              },
-              {
-                label: "PH Value",
-                value: "4",
-                status: "Low",
-                color: "#C5B100",
-              },
-            ].map((item) => (
+            {elements.slice(3, 6).map((item) => (
               <div
                 key={item.label}
                 className="flex justify-between shadow-md p-2 rounded-md"

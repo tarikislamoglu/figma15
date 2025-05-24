@@ -7,6 +7,32 @@ import { IoLocationSharp } from "react-icons/io5";
 const DashBoard = () => {
   const [newFarm, setNewFarm] = useState(false);
   const pathname = usePathname();
+  const products = [
+    {
+      color: "#FF9494",
+      label: "Wheat",
+      percent: "40%",
+      status: "Ready",
+    },
+    {
+      color: "#0066C5",
+      label: "Corn",
+      percent: "10%",
+      status: "Not Ready",
+    },
+    {
+      color: "#FF0000",
+      label: "Barley",
+      percent: "30%",
+      status: "Ready",
+    },
+    {
+      color: "#60A662",
+      label: "Paddy",
+      percent: "0%",
+      status: "Ready",
+    },
+  ];
 
   const getLinkClass = (path) =>
     `block py-2 text-center transition ${
@@ -123,12 +149,7 @@ const DashBoard = () => {
                   23 Acres
                 </div>
                 <ul className="flex flex-col justify-center space-y-2">
-                  {[
-                    { color: "#FF9494", label: "Wheat" },
-                    { color: "#0066C5", label: "Corn" },
-                    { color: "#FF0000", label: "Barley" },
-                    { color: "#60A662", label: "Paddy" },
-                  ].map(({ color, label }) => (
+                  {products.map(({ color, label }) => (
                     <li key={label} className="flex items-center space-x-3">
                       <div
                         className="h-5 w-5 rounded-full"
@@ -142,32 +163,7 @@ const DashBoard = () => {
 
               <div className="border-t p-3">
                 <ul className="space-y-2">
-                  {[
-                    {
-                      color: "#FF9494",
-                      label: "Wheat",
-                      percent: "40%",
-                      status: "Ready",
-                    },
-                    {
-                      color: "#0066C5",
-                      label: "Corn",
-                      percent: "10%",
-                      status: "Not Ready",
-                    },
-                    {
-                      color: "#FF0000",
-                      label: "Barley",
-                      percent: "30%",
-                      status: "Ready",
-                    },
-                    {
-                      color: "#60A662",
-                      label: "Paddy",
-                      percent: "0%",
-                      status: "Ready",
-                    },
-                  ].map(({ color, label, percent, status }) => (
+                  {products.map(({ color, label, percent, status }) => (
                     <li key={label} className="flex items-center space-x-3">
                       <div
                         className="h-5 w-5 rounded-full"

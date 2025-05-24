@@ -8,6 +8,11 @@ const Livestock = () => {
   const [newFarm, setNewFarm] = useState(false);
   const pathname = usePathname();
 
+  const animals = [
+    { animal: "Goat", image: "/goat.png", count: "+5" },
+    { animal: "Cow", image: "/cow.png", count: "+2" },
+  ];
+
   const getLinkClass = (path) =>
     `block py-2 transition text-center ${
       pathname === path
@@ -126,10 +131,7 @@ const Livestock = () => {
         </div>
 
         <div className="flex flex-col md:flex-row md:space-x-4">
-          {[
-            { animal: "Goat", image: "/goat.png", count: "+5" },
-            { animal: "Cow", image: "/cow.png", count: "+2" },
-          ].map((item) => (
+          {animals.map((item) => (
             <div
               key={item.animal}
               className="w-full md:w-1/2 lg:w-1/3 p-2 rounded-md shadow-md space-y-3"
