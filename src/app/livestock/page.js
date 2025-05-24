@@ -24,6 +24,21 @@ const Livestock = () => {
       />
     </div>
   );
+  const InputWithIcon = ({ icon, placeholder, type = "input" }) => (
+    <div className="flex w-full space-x-2 justify-center">
+      <img src={icon} width={25} height={25} />
+      {type === "select" ? (
+        <select className="border rounded-md w-2/3 p-1">
+          <option>{placeholder}</option>
+        </select>
+      ) : (
+        <input
+          className="border rounded-md w-2/3 p-1"
+          placeholder={placeholder}
+        />
+      )}
+    </div>
+  );
 
   const Modal = ({ title, onClose, children }) => (
     <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl rounded-md overflow-y-auto">
@@ -41,9 +56,9 @@ const Livestock = () => {
   );
 
   return (
-    <div className="min-h-screen w-full bg-[#4A7A4C] flex">
+    <div className="flex flex-col md:flex-row  min-h-screen w-full bg-[#4A7A4C]">
       {/* Sidebar */}
-      <aside className="flex min-w-1/5 flex-col items-center justify-between pb-10 text-white">
+      <aside className="flex md:w-1/5 flex-col items-center space-y-10 py-10  text-white">
         <div className="flex flex-col items-center space-y-1">
           <img
             src="/avatar.jpg"
@@ -54,7 +69,7 @@ const Livestock = () => {
           <p className="text-xs">farm owner</p>
         </div>
 
-        <ul className="w-full space-y-3 text-center text-lg font-bold">
+        <ul className="w-full space-y-3 text-center text-lg font-bold ">
           <li>
             <Link
               href="/farmanalytics"
@@ -84,8 +99,8 @@ const Livestock = () => {
       </aside>
 
       {/* Main Content */}
-      <div className="bg-white rounded-lg w-full m-2 text-[#4A7A4C] p-5 space-y-5 relative">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+      <div className="bg-white rounded-lg w-full md:m-2 text-[#4A7A4C] p-5 space-y-5 relative">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center items-center">
           <h2 className="text-3xl font-bold">Manage Livestock</h2>
           <div className="flex space-x-3 mt-4 md:mt-0">
             <button className="bg-[#4A7A4C] text-white rounded-md p-2 flex items-center space-x-1">
@@ -194,22 +209,5 @@ const Livestock = () => {
     </div>
   );
 };
-
-// Reusable InputWithIcon component
-const InputWithIcon = ({ icon, placeholder, type = "input" }) => (
-  <div className="flex w-full space-x-2 justify-center">
-    <img src={icon} width={25} height={25} />
-    {type === "select" ? (
-      <select className="border rounded-md w-2/3 p-1">
-        <option>{placeholder}</option>
-      </select>
-    ) : (
-      <input
-        className="border rounded-md w-2/3 p-1"
-        placeholder={placeholder}
-      />
-    )}
-  </div>
-);
 
 export default Livestock;

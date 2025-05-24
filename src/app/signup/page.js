@@ -45,11 +45,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex min-h-screen max-w-full ">
-      <img src="/desktop2.jpg" alt="" className="w-3/5 h-[1024px]" />
+    <div className="flex flex-col md:flex-row md:min-h-screen max-w-full ">
+      <img src="/desktop2.jpg" alt="" className="md:w-3/5 md:h-[1024px]" />
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col p-8 w-2/5 space-y-5 justify-center"
+        className="flex flex-col p-8 md:w-2/5 space-y-5 justify-center"
       >
         <h2 className="font-bold text-[37px] text-[#4A7A4C]">Sign Up</h2>
         <div className="relative">

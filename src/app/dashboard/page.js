@@ -15,21 +15,52 @@ const DashBoard = () => {
         : "text-white hover:bg-[#619a65]"
     }`;
 
+  const Modal = ({ title, onClose, children }) => (
+    <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl">
+      <button
+        className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md font-bold mb-3"
+        onClick={onClose}
+      >
+        Back
+      </button>
+      <h2 className="text-[#4A7A4C] text-[35px] font-bold text-center mb-5">
+        {title}
+      </h2>
+      {children}
+    </div>
+  );
+
+  const InputWithIcon = ({ icon, placeholder, type = "input" }) => (
+    <div className="flex w-full space-x-2 justify-center">
+      <img src={icon} width={25} height={25} />
+      {type === "select" ? (
+        <select className="border rounded-md w-2/3 p-1">
+          <option>{placeholder}</option>
+        </select>
+      ) : (
+        <input
+          className="border rounded-md w-2/3 p-1"
+          placeholder={placeholder}
+        />
+      )}
+    </div>
+  );
+
   return (
-    <div className="flex min-h-screen w-full bg-[#4A7A4C]">
+    <div className="flex flex-col md:flex-row  min-h-screen w-full bg-[#4A7A4C]">
       {/* Sidebar */}
-      <aside className="flex min-w-1/5 flex-col items-center justify-between pb-10 text-white">
+      <aside className="flex md:w-1/5 flex-col items-center space-y-10 py-10  text-white">
         <div className="flex flex-col items-center space-y-1">
           <img
             src="/avatar.jpg"
             alt="avatar"
             className="h-[123px] w-[123px] rounded-full border-4 border-white"
           />
-          <h3 className="font-bold">Namık Korona</h3>
+          <h3 className="font-bold text-center">Namık Korona</h3>
           <p className="text-xs">farm owner</p>
         </div>
 
-        <ul className="w-full space-y-3 text-center text-lg font-bold">
+        <ul className="w-full space-y-3 text-center text-lg font-bold ">
           <li>
             <Link
               href="/farmanalytics"
@@ -59,8 +90,8 @@ const DashBoard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="relative m-2 ml-0 w-full rounded-lg bg-white p-5 font-bold text-[#4A7A4C] space-y-5">
-        <div className="flex flex-col items-center justify-between md:flex-row">
+      <main className="relative md:m-2 ml-0 rounded-lg bg-white p-5 font-bold text-[#4A7A4C] space-y-5 md:w-4/5">
+        <div className="flex flex-col items-center justify-between md:flex-row space-y-5">
           <h2 className="text-3xl">Manage Livestock</h2>
           <div className="flex items-center space-x-2 rounded-md bg-[#4A7A4C] p-3 text-white">
             <img src="/view.png" alt="view" />
@@ -191,36 +222,5 @@ const DashBoard = () => {
     </div>
   );
 };
-// Reusable Modal component
-const Modal = ({ title, onClose, children }) => (
-  <div className="absolute top-5 left-10 p-5 w-4/5 h-4/5 bg-white shadow-xl">
-    <button
-      className="border-2 border-[#4A7A4C] text-[#4A7A4C] bg-white p-1 rounded-md font-bold mb-3"
-      onClick={onClose}
-    >
-      Back
-    </button>
-    <h2 className="text-[#4A7A4C] text-[35px] font-bold text-center mb-5">
-      {title}
-    </h2>
-    {children}
-  </div>
-);
-// Reusable InputWithIcon component
-const InputWithIcon = ({ icon, placeholder, type = "input" }) => (
-  <div className="flex w-full space-x-2 justify-center">
-    <img src={icon} width={25} height={25} />
-    {type === "select" ? (
-      <select className="border rounded-md w-2/3 p-1">
-        <option>{placeholder}</option>
-      </select>
-    ) : (
-      <input
-        className="border rounded-md w-2/3 p-1"
-        placeholder={placeholder}
-      />
-    )}
-  </div>
-);
 
 export default DashBoard;
