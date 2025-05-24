@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-
+import { IoLocationSharp } from "react-icons/io5";
 const DashBoard = () => {
   const [newFarm, setNewFarm] = useState(false);
   const pathname = usePathname();
@@ -20,9 +20,7 @@ const DashBoard = () => {
         <div className="flex flex-col items-center justify-center">
           <img
             src="/avatar.jpg"
-            width={123}
-            height={123}
-            className="rounded-full border-4 border-white "
+            className="rounded-full border-4 border-white w-[123px] h-[123px] "
           />
           <h3 className="font-bold">Namık Korona</h3>
           <p className="text-[12px]">farm owner</p>
@@ -67,12 +65,22 @@ const DashBoard = () => {
           <p>Area:</p>
           <p>Expected date of Harvest:</p>
         </div>
-        <h3 className="text-[#4A7A4C] flex justify-end pr-30">
-          Crops Distribution
-        </h3>
+        <div className="flex justify-around">
+          <span className="w-1/2"> </span>
+          <h3 className="text-[#4A7A4C] w-1/2 text-center ">
+            Crops Distribution
+          </h3>
+        </div>
+
         <div className="flex space-x-2 ">
           <div className="w-1/2">
-            <img src="/location.jpg" />
+            <div className="relative h-full ">
+              <img src="/location.jpg" className="h-full w-full" />
+              <div className="absolute right-2 bottom-2 bg-white  rounded-md flex items-center justify-center">
+                <IoLocationSharp />
+                Location
+              </div>
+            </div>
           </div>
           <div className="w-1/2 text-black font-bold border-1 p-5 rounded-md shadow-xl">
             <div className="flex flex-col space-y-10">

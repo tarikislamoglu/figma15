@@ -55,17 +55,17 @@ const Livestock = () => {
           + Add Farm
         </button>
       </div>
-      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 text-[#4A7A4C] space-y-5 relative p-5">
+      <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 text-[#4A7A4C] space-y-5 relative p-5 font-bold">
         <div className="flex justify-between items-baseline">
-          <h2 className="text-[35px] font-bold">Livestock</h2>
+          <h2 className="text-[35px] font-bold">Manage Livestock</h2>
           <div className="flex p-5">
-            <div className="bg-[#4A7A4C] flex mx-2 rounded-md p-2">
+            <div className="bg-[#4A7A4C] flex mx-2 rounded-md p-2 space-x-1">
               <img src="/view.png" />
               <button className=" text-white ">View Live</button>
             </div>
 
             <button
-              className="bg-[#4A7A4C] text-white rounded-md"
+              className="bg-[#4A7A4C] text-white rounded-md p-2"
               onClick={() => setAddCattle(true)}
             >
               + Add Cattle
@@ -75,17 +75,21 @@ const Livestock = () => {
 
         <div className="flex justify-end">
           <div className="bg-[#4A7A4C] p-2 rounded-md text-white">
-            <p>Total:63</p>
+            <p>
+              Total:<span className="px-5">63</span>
+            </p>
           </div>
-          <div className="bg-[#4A7A4C] p-2 rounded-md text-white mx-2">
-            <p>Area:25 Acres</p>
+          <div className="bg-[#4A7A4C] p-2 rounded-md text-white mx-2 px-5">
+            <p>
+              Area:<span className="px-2">25 Acres</span>
+            </p>
           </div>
         </div>
 
-        <div className="flex space-x-2">
-          <div className="border-1">
+        <div className="flex space-x-2 py-5 font-bold ">
+          <div className=" w-1/3 p-2 rounded-md shadow-md space-y-3">
             <h3>Goat:</h3>
-            <ul>
+            <ul className="pl-2">
               <li>Count:</li>
               <li>Breed:</li>
               <li>Males:</li>
@@ -98,9 +102,9 @@ const Livestock = () => {
               </p>
             </div>
           </div>
-          <div className="border-1">
+          <div className=" w-1/3 p-2 rounded-md shadow-md space-y-3">
             <h3>Cow:</h3>
-            <ul>
+            <ul className="pl-2">
               <li>Count:</li>
               <li>Breed:</li>
               <li>Males:</li>
