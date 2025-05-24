@@ -21,9 +21,7 @@ const Livestock = () => {
         <div className="flex flex-col items-center justify-center">
           <img
             src="/avatar.jpg"
-            width={123}
-            height={123}
-            className="rounded-full border-4 border-white "
+            className="rounded-full border-4 border-white w-[123px] h-[123px]"
           />
           <h3 className="font-bold">Namık Korona</h3>
           <p className="text-[12px]">farm owner</p>
@@ -56,7 +54,7 @@ const Livestock = () => {
         </button>
       </div>
       <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 text-[#4A7A4C] space-y-5 relative p-5 font-bold">
-        <div className="flex justify-between items-baseline">
+        <div className="flex md:justify-between md:items-baseline md:flex-row flex-col items-center">
           <h2 className="text-[35px] font-bold">Manage Livestock</h2>
           <div className="flex p-5">
             <div className="bg-[#4A7A4C] flex mx-2 rounded-md p-2 space-x-1">
@@ -73,7 +71,7 @@ const Livestock = () => {
           </div>
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex md:justify-end justify-center">
           <div className="bg-[#4A7A4C] p-2 rounded-md text-white">
             <p>
               Total:<span className="px-5">63</span>
@@ -87,7 +85,7 @@ const Livestock = () => {
         </div>
 
         <div className="flex space-x-2 py-5 font-bold ">
-          <div className=" w-1/3 p-2 rounded-md shadow-md space-y-3">
+          <div className=" w-full md:w-1/3 p-2 rounded-md shadow-md space-y-3">
             <h3>Goat:</h3>
             <ul className="pl-2">
               <li>Count:</li>
@@ -102,7 +100,7 @@ const Livestock = () => {
               </p>
             </div>
           </div>
-          <div className=" w-1/3 p-2 rounded-md shadow-md space-y-3">
+          <div className=" w-full md:w-1/3 p-2 rounded-md shadow-md space-y-3">
             <h3>Cow:</h3>
             <ul className="pl-2">
               <li>Count:</li>

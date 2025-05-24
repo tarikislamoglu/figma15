@@ -53,27 +53,26 @@ const DashBoard = () => {
         </button>
       </div>
       <div className="bg-white rounded-lg min-h-screen w-full m-2 ml-0 p-5 text-[#4A7A4C] font-bold space-y-5 relative">
-        <div className=" flex justify-between">
+        <div className=" flex flex-col items-center md:flex-row md:justify-between">
           <h2 className="text-[35px] ">Manage Livestock</h2>
           <div className="flex p-3 bg-[#4A7A4C] items-center space-x-2 rounded-md">
             <img src="/view.png" className="" />
             <button className=" text-white rounded-md ">View Live</button>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <p>Farms:</p>
           <p>Area:</p>
           <p>Expected date of Harvest:</p>
         </div>
-        <div className="flex justify-around">
-          <span className="w-1/2"> </span>
-          <h3 className="text-[#4A7A4C] w-1/2 text-center ">
+        <div className="flex justify-around items-center">
+          <h3 className="text-[#4A7A4C] w-1/2 md:w-full text-center ">
             Crops Distribution
           </h3>
         </div>
 
-        <div className="flex space-x-2 ">
-          <div className="w-1/2">
+        <div className="flex flex-col md:flex-row space-y-2 md:space-x-2 items-center ">
+          <div className="w-full md:w-1/2">
             <div className="relative h-full ">
               <img src="/location.jpg" className="h-full w-full" />
               <div className="absolute right-2 bottom-2 bg-white  rounded-md flex items-center justify-center">
@@ -82,7 +81,7 @@ const DashBoard = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/2 text-black font-bold border-1 p-5 rounded-md shadow-xl">
+          <div className="w-full md:w-1/2 text-black font-bold border-1 p-5 rounded-md shadow-xl">
             <div className="flex flex-col space-y-10">
               <div className="flex space-x-5 h-1/2 justify-between">
                 <div className="border-4 rounded-full w-[150px] h-[150px] flex justify-center items-center">
