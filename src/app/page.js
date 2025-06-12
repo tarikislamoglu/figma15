@@ -31,9 +31,13 @@ export default function Home() {
     setIsChecked(false);
   };
   return (
-    <div className="flex flex-col md:flex-row md:min-h-screen max-w-full ">
-      <img src="/desktop1.jpg" alt="" className="md:w-3/5 md:h-[1024px]" />
-      <div className="flex flex-col p-8 md:w-2/5  justify-center space-y-5">
+    <div className="flex flex-col md:flex-row md:min-h-dvh min-h-screen max-w-full ">
+      <img
+        src="/desktop1.jpg"
+        alt=""
+        className="md:w-3/5 w-full h-48 md:h-auto object-cover"
+      />
+      <div className="flex flex-col p-4 md:p-8 md:w-2/5 w-full justify-center space-y-5">
         <form className="space-y-5" onSubmit={handleLogin}>
           <h2 className="font-bold text-[37px] text-[#4A7A4C]">Sign In</h2>
           <div className="relative">
